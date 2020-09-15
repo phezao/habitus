@@ -1,4 +1,13 @@
-<h1>This is your habit</h1>
-<p><%= @habit.name %></p>
+<h1><%= @habit.name %></h1>
+
+<ul class="list-group list-group-horizontal my-4">
+    <li class="list-group-item">S</li>
+    <li class="list-group-item">M</li>
+    <li class="list-group-item">T</li>
+    <li class="list-group-item">W</li>
+    <li class="list-group-item">T</li>
+    <li class="list-group-item">F</li>
+    <li class="list-group-item">S</li>
+</ul>
 
 <%= link_to 'Erase habit', habit_path(@habit), method: :delete %>

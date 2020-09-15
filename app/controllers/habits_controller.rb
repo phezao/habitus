@@ -4,6 +4,7 @@ class HabitsController < ApplicationController
     def index
         @habits = Habit.where(user: current_user)
         @day = DatePicker.call
+        @done = false
     end
     
     def show
