@@ -3,6 +3,7 @@ class HabitsController < ApplicationController
     
     def index
         @habits = Habit.where(user: current_user)
+        @day = DatePicker.call
     end
     
     def show
@@ -14,6 +15,7 @@ class HabitsController < ApplicationController
     
     def create
         @habit = Habit.create(habits_params)
+        @habit.name.capitalize!
         @habit.user = current_user
         if @habit.save
             redirect_to habit_path(@habit)

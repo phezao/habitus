@@ -1,20 +1,19 @@
 <h1>My habits</h1>
 <%= link_to 'Create new habit', new_habit_path, class: "btn btn-primary" %>
+<%= render 'shared/days' %>
 <ul style="list-style-type: none; padding: 0;"> 
     <% @habits.each do |habit| %>
     <div class="my-4">
         <li><%= link_to habit.name, habit_path(habit) %></li>
         <ul class="list-group list-group-horizontal">
-            <li class="list-group-item text-white">S</li>
-            <li class="list-group-item text-white">M</li>
-            <li class="list-group-item text-white">T</li>
-            <li class="list-group-item text-white">W</li>
-            <li class="list-group-item text-white">T</li>
-            <li class="list-group-item text-white">F</li>
-            <li class="list-group-item text-white">S</li>
+            <li class="list-group-item text-white"><%= (@day - 6.day).strftime("%^A")[0] %></li>
+            <li class="list-group-item text-white"><%= (@day - 5.day).strftime("%^A")[0] %></li>
+            <li class="list-group-item text-white"><%= (@day - 4.day).strftime("%^A")[0] %></li>
+            <li class="list-group-item text-white"><%= (@day - 3.day).strftime("%^A")[0] %></li>
+            <li class="list-group-item text-white"><%= (@day - 2.day).strftime("%^A")[0] %></li>
+            <li class="list-group-item text-white"><%= (@day - 1.day).strftime("%^A")[0] %></li>
+            <li class="list-group-item text-white"><%= @day.strftime("%^A")[0] %></li>
         </ul>    
     </div>
     <% end %>
 </ul>
-
-<%= render 'shared/days' %>
