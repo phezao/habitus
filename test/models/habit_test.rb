@@ -2,10 +2,10 @@ require 'test_helper'
 
 class HabitTest < ActiveSupport::TestCase
   def setup
-    @user = User.create(name: "Maria", email: "maria@gmail.com", password: "123456")
+    @user = User.create(email: "maria@gmail.com", password: "123456")
     @habit = Habit.create(name: "Pular corda", user: @user)  
   end
-  test "Testing the relationship between the user and the habit, a habit has a user" do
+  test "A habit should have a user" do
     
     assert_not_nil @habit.user 
   end

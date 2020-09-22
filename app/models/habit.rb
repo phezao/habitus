@@ -1,4 +1,5 @@
 class Habit < ApplicationRecord
-  validates :name, :user, presence: true
+  validates :name, presence: true
+  has_many :states
   belongs_to :user
 end

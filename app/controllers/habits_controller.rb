@@ -19,7 +19,7 @@ class HabitsController < ApplicationController
         @habit.name.capitalize!
         @habit.user = current_user
         if @habit.save
-            redirect_to habit_path(@habit)
+            redirect_to habits_path
         else
             redirect_to new_habit_path
         end            
@@ -31,7 +31,7 @@ class HabitsController < ApplicationController
 
     def update
         @habit.update(habits_params)
-        redirect_to habit_path(@habit)
+        redirect_to habits_path
     end
 
     def destroy
